@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -28,18 +29,18 @@
 		<div id="sm-12">
 			<table class="table">
 				<tr>
-					<th>ID</th>
+					<th>Opções</th> 
 					<th>TITULO</th>
-					<th>Acesso</th>
+					<!-- <th>Acesso</th> -->
 					<th>TOTAL DE VOTOS</th>
 					<th>CURTIDAS</th>
 					<th>DISLIKES</th>
 				</tr>
 				<c:forEach var="row" items="${result.rows}">
 					<tr>
-						<td><c:out value="${row.id}" /></td>
+						<!-- <td><c:out value="${row.id}" /></td>  -->
+						<td><a href="${row.url}" ><i class="material-icons" style="font-size:24px;color:black">edit</i></a><a href="${row.url}" ><i class="material-icons" style="font-size:24px;color:red">delete_forever</i></a></td>
 						<td><c:out value="${row.titulo}" /></td>
-						<td><a href="${row.url}" >acesso</a></td>
 						<td><c:out value="${row.totaldevotos}" /></td>
 						<td><c:out value="${row.curtidas}" /></td>
 						<td><c:out value="${row.dislikes}" /></td>
