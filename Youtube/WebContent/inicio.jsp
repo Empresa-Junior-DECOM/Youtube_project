@@ -9,7 +9,7 @@
 <jsp:include page="topo.jsp"></jsp:include>
 
 <div class="container">
-<h3>Estatísticas do Youtube</h3>
+<h4>Estatísticas do Youtube</h4>
 <p>Já temos até o momento <b>5</b> registros</p>
 
 <div class="accordion" id="accordionExample">

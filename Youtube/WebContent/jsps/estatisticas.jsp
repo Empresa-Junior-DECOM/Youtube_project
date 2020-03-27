@@ -1,17 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
 <head>
-<title>Listar todos os registros</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
-<style>
-</style>
-
 <body>
 	<!-- cabeçalho -->
 	<jsp:include page="../topo.jsp"></jsp:include>
@@ -22,7 +18,7 @@
 		password="jane00" />
 	
 	<!--  query -->
-	<sql:query dataSource="${bd}" var="result"> SELECT * from DADOS </sql:query>
+	<sql:query dataSource="${bd}" var="result"> SELECT MAX(totaldevotos) from DADOS </sql:query>
 	
 	<!-- corpo -->
 	<div class="container">
@@ -40,16 +36,16 @@
 					<th>CURTIDAS</th>
 					<th>DISLIKES</th>
 				</tr>
-				<c:forEach var="row" items="${result.rows}">
+				<!-- <c:forEach var="row" items="${result.rows}"> -->
 					<tr>
 						<!-- <td><c:out value="${row.id}" /></td>  -->
-						<td><a href="${row.url}" ><i class="material-icons" style="font-size:24px;color:black">edit</i></a><a href="${row.url}" ><i class="material-icons" style="font-size:24px;color:red">delete_forever</i></a></td>
-						<td><c:out value="${row.titulo}" /></td>
-						<td><c:out value="${row.totaldevotos}" /></td>
-						<td><c:out value="${row.curtidas}" /></td>
-						<td><c:out value="${row.dislikes}" /></td>
+						<td><a href="${row}" ><i class="material-icons" style="font-size:24px;color:black">edit</i></a><a href="${row.url}" ><i class="material-icons" style="font-size:24px;color:red">delete_forever</i></a></td>
+						<td><c:out value="${result.rows}" /></td>
+						<td><c:out value="${row}" /></td>
+						<td><c:out value="${row}" /></td>
+						<td><c:out value="${row}" /></td>
 					</tr>
-				</c:forEach>
+				 <!-- </c:forEach> -->
 			</table>
 		</div>
 	</div>

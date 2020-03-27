@@ -25,7 +25,7 @@
 		// linha que gerou o problema (eu acho!)
 		session.setAttribute("cpf", cpf); 
 
-		String consulta = "SELECT * FROM Login Where cpf='"+cpf+"' and senha='"+senha+"'";
+		String consulta = "SELECT * FROM usuarios Where cpf='"+cpf+"' and senha='"+senha+"'";
 		Statement statement;
 		
 		try {
